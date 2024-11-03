@@ -1,0 +1,676 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link media="all" href="https://teaching.csse.uwa.edu.au/units/CITS2002/html/a4.css" type="text/css" rel="stylesheet" />
+
+<!--
+    <link media="all" href="https://teaching.csse.uwa.edu.au/units/CITS2002/cits2002.css" type="text/css" rel="stylesheet" />
+-->
+    <title>CITS2002 Systems Programming</title>
+</head>
+
+<body style="font-family: Arial, Helvetica, sans-serif; margin: 0;">
+
+
+<style>
+p.leftmenu {
+    margin-left:        0.5em;
+    margin-right:       0.5em;
+    border-bottom:      1px solid #ddd;
+}
+div.blueblock {
+    background:		#e7f5fe;
+    color:              black;
+    border:             1px solid blue;
+    border-radius:      8px;
+
+    margin-left:        2em;
+    margin-right:       2em;
+    padding:            0.5em;
+    line-height:        1.2;
+}
+
+div.redblock {
+    background:		#ffe6e6;
+    color:              black;
+    border:             1px solid red;
+    border-radius:      8px;
+
+    margin-left:        2em;
+    margin-right:       2em;
+    padding:            0.5em;
+    line-height:        1.2;
+}
+
+.r0 {
+    background:         #214793;
+    color:		white;
+    text-align:		center;
+    padding:		6px;
+}
+.r1 {
+    background:		#ccc;
+    border:		1px solid blue;
+    padding:		6px;
+    vertical-align:	top;
+}
+.r2 {
+    background:		white;
+    border:		1px solid blue;
+    padding:		6px;
+    vertical-align:	top;
+}
+.r3 {
+    background:         #e7f5fe;
+    border:		1px solid blue;
+    padding:		6px;
+    vertical-align:	top;
+}
+.r4 {
+    background:         #d3dcf8;
+    border:		1px solid blue;
+    padding:		6px;
+    vertical-align:	top;
+}
+.tute {
+    color:		white;
+    background:		#ff471a;
+    border:		1px solid blue;
+    padding:		6px;
+    vertical-align:	top;
+    white-space:	nowrap;
+}
+.consult {
+    color:		black;
+    background:		gold;
+    border:		1px solid blue;
+    padding:		6px;
+    vertical-align:	top;
+    white-space:	nowrap;
+}
+.lect {
+    color:		white;
+    background:		#0047b3;
+    border:		1px solid blue;
+    padding:		6px;
+    vertical-align:	top;
+    white-space:	nowrap;
+}
+.lab {
+    color:		white;
+    background:		#00b2b2;
+    border:		1px solid blue;
+    padding:		6px;
+    vertical-align:	top;
+    white-space:	nowrap;
+}
+</style>
+
+
+<table style="width: 100%; background: #214793;">
+<tr style="height: 72px;">
+    <td style="color: white; text-align: left; vertical-align: middle;">
+        <img style="height: 48px;" src="images/uwacrest.png">
+    </td>
+    <td style="color: white; font-size: 1.3em; text-align: right; vertical-align: middle; white-space: nowrap;">
+        CITS2002 Systems Programming&nbsp;&nbsp;
+    </td>
+</tr>
+<tr>
+    <td colspan=2 style="background: #e0b500; width: 100%; height: 2px;">
+    </td>
+</tr>
+</table>
+
+<div style="font-size: 1.0em; text-align: left; width: 98%;">
+
+<!-- ----------------- BOTTOM-OF-HEADER ----------------------------- -->
+
+<table style='margin: 0px; padding: 0px;'><tr>
+<td style='white-space: nowrap; width: 12em; vertical-align: top;'>
+
+&nbsp;<p>
+
+<p class='leftmenu'><a href='https://teaching.csse.uwa.edu.au/units/CITS2002/index.php'>Unit home</a></p>
+
+<p class='leftmenu'><a href='https://teaching.csse.uwa.edu.au/units/CITS2002/projects/project1.php'><span style='color: red;'><b>Project&nbsp;1</b></span></a></p>
+
+<p class='leftmenu'><a href='https://secure.csse.uwa.edu.au/run/help2002'>help2002</a></p>
+
+<p class='leftmenu'>Lecture &amp; Workshop<br> recordings on LMS</p>
+
+<p class='leftmenu'><a
+href='https://teaching.csse.uwa.edu.au/units/CITS2002/schedule.php'>Schedule</a></p>
+
+<p class='leftmenu'><a href='https://teaching.csse.uwa.edu.au/units/CITS2002/faq.php'>FAQ</a></p>
+
+<p class='leftmenu'><a href='https://lms.uwa.edu.au/bbcswebdav/institution/Unit_Outlines_2024/CITS2002_SEM-2_2024/CITS2002_SEM-2_2024_UnitOutline.html'>Unit outline</a></p>
+
+
+
+<p class='leftmenu'><a href='https://teaching.csse.uwa.edu.au/units/CITS2002/c-books.php'>C textbooks</a></p>
+
+<p class='leftmenu'><a href='https://teaching.csse.uwa.edu.au/units/CITS2002/os-books.php'>OS textbooks</a></p>
+
+<p class='leftmenu'><a href='https://teaching.csse.uwa.edu.au/units/CITS2002/resources.php'>Information resources</a></p>
+<br>
+
+<p class='leftmenu'><a href='https://teaching.csse.uwa.edu.au/units/CITS2002/extra-reading.php'>Extra reading</a></p>
+
+<p class='leftmenu'><a href='https://teaching.csse.uwa.edu.au/units/CITS2002/past-projects/'>Past projects</a></p>
+
+<p class='leftmenu'><a href='https://teaching.csse.uwa.edu.au/units/CITS2002/feedback/'>Recent feedback</a></p>
+
+<br>
+<p class='leftmenu'><a href='https://teaching.csse.uwa.edu.au/units/CITS2002/workeffectively.php'>Working effectively</a></p>
+
+<p class='leftmenu'><a
+href='https://teaching.csse.uwa.edu.au/units/CITS2002/wellbeing.php'><span
+style='font-size: 1.1em; color: green;'><b>Look after yourself!</b></span></a></p>
+
+
+
+<td style='vertical-align: top; margin-left: 8em;'>
+
+<link media="all" href="../cits2002.css" type="text/css" rel="stylesheet" />
+
+<style>
+.code {
+    font-family:	monospace;
+    font-size:		1.9em;
+    border:		1px solid gray;
+    background-color:	#dddddd;
+    white-space:	nowrap;
+    padding:		0.5em;
+    width:		36em;
+    margin-left:        2em;
+}
+</style>
+
+<h3>Project 1 2023</h3>
+
+<div class='blueblock'>
+    <b>The goal of this project
+    is to implement a program,
+    named <i>myscheduler</i>,
+    to emulate (or simulate) the scheduling of processes on a single-CPU, multi-device system,
+    employing a pre-emptive process scheduler</b>.
+    </p>
+    <p>
+    Successful completion of the project will enhance your understanding of
+    how an operating system can manage processes,
+    core features of the C11 programming language,
+    functions from the C11 standard library, and
+    your operating system's system-calls; and
+    familiarise yourself with online systems' documentation.
+
+</div>
+</p>
+
+<h4>Project Description</h4>
+
+Consider an operating system's
+<a href='http://teaching.csse.uwa.edu.au/units/CITS2002/lectures/lecture07/09.html'>5-State Model of Process Execution</a>,
+as introduced in Lecture 7.
+New processes are admitted to the system and are immediately marked as <b>Ready</b> to run.
+Each process executes, in turn, until it:
+</p>
+
+<p>
+<ul>
+<li> completes its execution
+        (at which time the process <b>Exit</b>s),
+	<p>
+        </li>
+<li> executes for a finite <b>time-quantum</b>
+        (after which the process is marked as <b>Ready</b>
+        and is queued until it can run again),
+	<p>
+        </li>
+<li> requests to <b>read</b> or <b>write</b> from an I/O device
+        (at which time the process is marked as <b>Blocked</b>
+        and queued until its I/O request is satisfied),
+	<p>
+        </li>
+<li> <b>sleeps</b> for a requested time
+        (at which time the process is marked as <b>Blocked</b>
+	until the requested time elapses), or
+	<p>
+        </li>
+<li> <b>waits</b> for all processes that it has spawned to terminate
+        (at which time the process is marked as <b>Blocked</b>
+	until the other processes terminate).
+	<p>
+        </li>
+</ul>
+</p>
+
+<p>
+We'll consider a simplified operating system
+in which only a single process occupies the single CPU at any one time.
+The CPU has a clock speed of 2GHz,
+enabling it to execute two-billion instructions per second.
+We do not need to consider the speed of accessing RAM.
+</p>
+
+<p>
+The CPU is connected to a number of input/output (I/O) devices of
+differing speeds, using a single high-speed <b>data-bus</b>.
+Only a single process can use the <i>data-bus</i> at any one time.
+</p>
+
+<p>
+Only a single process can access each I/O device (and the <i>data-bus</i>)
+at any one time.
+If the <i>data-bus</i> is in use (data is still being transferred)
+and a second process also needs to access the <i>data-bus</i>,
+the second process must be queued until the current transfer is complete.
+
+When a data transfer completes,
+all waiting (queued) processes are consider to determine which process can
+next acquire the <i>data-bus</i>.
+
+If multiple processes are waiting to acquire the <i>data-bus</i>,
+the process that has been waiting the longest for the device with the
+<i>fastest read speed</i> will next acquire the <i>data-bus</i>.
+
+Thus,
+all processes waiting on devices with high read speeds are serviced
+before any processes that are waiting on devices with lower read speeds.
+</p>
+
+<p>
+The result is a need to support
+<a href='http://teaching.csse.uwa.edu.au/units/CITS2002/lectures/lecture07/11.html'>Multiple blocked queues</a>,
+as introduced in Lecture 7.
+</p>
+
+<p>
+<ul>
+<li> It takes 5 microseconds to perform a <i>context-switch</i> -
+to move one process from
+<b>Ready</b>&nbsp;&rarr;&nbsp;<b>Running</b>.
+	<p>
+	</li>
+<li> It also takes 10 microseconds to move a process from
+<b>Running</b>&nbsp;&rarr;&nbsp;<b>Blocked</b>,
+<b>Running</b>&nbsp;&rarr;&nbsp;<b>Ready</b>,
+and
+<b>Blocked</b>&nbsp;&rarr;&nbsp;<b>Ready</b>.
+	<p>
+	</li>
+<li> All other state transitions occur instantly
+(unrealistic, but keeping the project simple).
+	<p>
+	</li>
+<li> It takes 20 microseconds for any process to first acquire the <i>data-bus</i>.
+	</li>
+</ul>
+</p>
+
+<p>
+<div class='blueblock'>
+    You should commence your coding by starting with
+    <a href='myscheduler.c'><b>myscheduler.c</b></a>
+</div>
+</p>
+
+<p>
+<h4>System configuration</h4>
+Consider the following sample <i>sysconfig</i> file which defines the characteristics
+of our hardware and the time-quantum for scheduling.
+Note that lines commencing with a '#' are comment lines,
+and the 'words' on each line may be separated by one-or-more space or tab characters.
+
+All speeds are in bytes-per-second (Bps),
+all times are in microseconds (usecs),
+and all I/O sizes are in bytes (B).
+
+We may assume that the format of the <i>sysconfig</i> file will always be correct,
+and its data values consistent,
+so we do not need to check for errors.
+</p>
+
+<p>
+<div class='code'>
+#            devicename   readspeed      writespeed
+#
+<b>device</b>       usb3.1       640000000Bps   640000000Bps
+<b>device</b>       terminal     10Bps          3000000Bps
+<b>device</b>       hd           160000000Bps   80000000Bps
+<b>device</b>       ssd          480000000Bps   420000000Bps
+#
+<b>timequantum</b>  100usec
+</div>
+</p>
+
+
+<p>
+<h4>Commands</h4>
+Our simple operating system supports a small number of <i>commands</i>
+(which you can modify and extend with with your own commands).
+
+When a <i>command</i> is invoked, a new <i>process</i> is created.
+Multiple instances of the same command may be executing simultaneously.
+
+Each <i>process </i> executes a sequence of <i>system-calls</i>
+until the process exits.
+</p>
+
+<p>
+Consider the following sample <i>command file</i> which defines
+the supported commands and the sequence of system-calls that they make.
+
+Each system-call made by a command is indented by a single tab,
+and is preceded by the elapsed execution time, in microseconds,
+of the process (the total time it has occupied the CPU).
+The times when each process's system-calls are made are guarateed to be ascending.
+
+Note that lines commencing with a '#' are comment lines,
+that the 'words' on each line may be separated by one-or-more space or tab characters,
+and that the commands do not receive or require any commnad-line arguments.
+
+We may assume that the format of the <i>commands</i> file will always be correct,
+and its data values consistent,
+so we do not need to check for errors.
+</p>
+
+<p>
+<div class='code'>
+#
+<b>shortsleep</b>
+<span style="color: red"><b>&larr; tab &rarr;</b></span>10usecs    sleep   1000000usecs
+<span style="color: red"><b>&larr; tab &rarr;</b></span>50usecs    exit
+#
+<b>longsleep</b>
+<span style="color: red"><b>&larr; tab &rarr;</b></span>10usecs    sleep   5000000usecs
+<span style="color: red"><b>&larr; tab &rarr;</b></span>50usecs    exit
+#
+<b>cal</b>
+<span style="color: red"><b>&larr; tab &rarr;</b></span>80usecs    write   terminal 2000B
+<span style="color: red"><b>&larr; tab &rarr;</b></span>90usecs    exit
+#
+<b>copyfile</b>
+<span style="color: red"><b>&larr; tab &rarr;</b></span>200usecs   read    hd       48000B
+<span style="color: red"><b>&larr; tab &rarr;</b></span>300usecs   write   hd       48000B
+<span style="color: red"><b>&larr; tab &rarr;</b></span>600usecs   read    hd       21000B
+<span style="color: red"><b>&larr; tab &rarr;</b></span>700usecs   write   hd       21000B
+<span style="color: red"><b>&larr; tab &rarr;</b></span>1000usecs  exit
+#
+<b>shell</b>
+<span style="color: red"><b>&larr; tab &rarr;</b></span>100usecs   write   terminal 10B
+<span style="color: red"><b>&larr; tab &rarr;</b></span>120usecs   read    terminal 4B
+<span style="color: red"><b>&larr; tab &rarr;</b></span>220usecs   spawn   cal
+<span style="color: red"><b>&larr; tab &rarr;</b></span>230usecs   wait
+<span style="color: red"><b>&larr; tab &rarr;</b></span>1000usecs  exit
+#
+</div>
+</p>
+
+<p>
+The only supported <i>system-calls</i> are
+<i>spawn</i>,
+<i>read</i>,
+<i>write</i>,
+<i>sleep</i>,
+<i>wait</i>, and
+<i>exit</i>.
+Each is demonstrated above.
+</p>
+
+<p>
+<h4>System Execution</h4>
+
+In the above example,
+when the command, <i>shortsleep</i> is invoked,
+a new process is created,
+and it is added to the <b>Ready</b> queue.
+
+When the process moves to the CPU (to the <b>Running</b> state),
+it executes for 10 microseconds and then issues a <i>sleep</i> system-call,
+requesting that the process sleeps (does nothing) for 1 second.
+
+As the process does not require the CPU while sleeping,
+it will be moved to a <b>Blocked</b> queue until 1 second elapses,
+after which time the process is again appended to the <b>Ready</b> queue.
+After 40 more microseconds of execution time (on the CPU),
+the process exits.
+</p>
+
+<p>
+The execution of the <i>shell</i> command is much more complicated.
+After executing for 100 microseconds on the CPU,
+the process writes 10 bytes (its shell prompt) to the terminal.
+
+After executing a further 20 microseconds the shell process reads
+in the name of a required command,
+executes for another 100 microseconds,
+and then <i>spawns</i> a new process to execute the <i>cal</i> command.
+<b>There are now two processes executing simultaneously</b>.
+
+The <i>shell</i> process next <i>wait</i>s for all of the processes that it has created
+(here, just the <i>cal</i> process).
+
+After executing for 80 microseconds,
+the new process executing the <i>cal</i> command writes its output to the terminal
+and <i>exit</i> after executing a further 10 microseconds.
+</p>
+
+<p>
+Having read both the <i>sysconfig</i> file and the <i>command</i> file,
+the system 'automatically' commences by executing the first command in the <i>command</i> file
+(here that would be the <i>shortsleep</i> command - a quite boring system!)
+</p>
+
+<p>
+Execution of the project is complete when there are no more processes (in any state).
+</p>
+
+<p>
+<hr style="text-align: center; width: 85%;">
+
+<h4>Project requirements</h4>
+
+<ol>
+<li> Your program, named <b><i>myscheduler</i></b>,
+should accept two command-line arguments providing
+the name of the <i>sysconfig</i> file
+and the name of the <i>commands</i> file.
+
+<b>Your program is only required to produce a single line of output</b>
+reporting the total time taken (in microseconds) to complete the
+emulation (or simulation) of the command sequence in the system
+(i.e. the time at which there are no more running processes),
+and
+the CPU-utilisation
+(the percentage of the time, as an integer, that the CPU is executing processes)
+For example:
+</p>
+
+<div style="margin-left: 3em; font-size: 1.1em;">
+<span class="prompt">prompt&gt;</span> ./myscheduler&nbsp;&nbsp;sysconfig-file&nbsp;&nbsp;command-file
+<br>
+found 3 devices
+<br>
+time quantum is 120
+<br>
+found 6 commands
+<br>
+what a fun project!
+<br>
+measurements&nbsp;&nbsp;482400&nbsp;&nbsp;24
+</div>
+</p>
+<p>
+Your program can print out any additional information (debugging?) that you want -
+<b>just ensure that the <i>last line</i> is of the form</b>
+"measurements&nbsp;&nbsp;482400&nbsp;&nbsp;24"
+<span style='color: red;'><b>(note that those two measurements are just an example)</b></span>.
+	<p>
+	</li>
+
+<li>	Your project <b>must</b> be written in the C11 programming language,
+	in a single source-code file named <b>myscheduler.c</b>.
+	<p>
+	</li>
+
+<li>	The project can be successfully completed without using any
+	dynamic memory allocation in C (such as with <i>malloc()</i>).
+	You may choose to use dynamic memory allocation,
+	but will not receive additional marks for doing so.
+	<p>
+	</li>
+
+<li>	Your project <b>must not</b> depend upon any libraries
+	(such as 3rd-party downloaded from the internet)
+	other than your system's standard library
+	(providing OS, C, and POSIX functions).
+	<p>
+	</li>
+
+</ol>
+
+<hr style="text-align: center; width: 85%;">
+
+<h4>Assessment</h4>
+
+<div class='blueblock'>
+    The project is due
+    <b>5:00pm Friday 15th September (end of week 7)</b>.
+</div>
+</p>
+
+<p>
+<ul>
+<li> The project is worth <b>25% of your final mark</b> for CITS2002.
+	It will be marked out of 50.
+    </p>
+    </li>
+
+<li> The project may be completed <b>individually or in teams of two</b>
+	(but not teams of three).
+	The choice of project partners is up to you -
+	you will not be automatically assigned a project partner.
+    </p>
+    </li>
+
+<li> If the project is undertaken by a team of two,
+	both students will receive the same mark for the project.
+    </p>
+    </li>
+
+<li> Requests for extensions will not be granted for students
+	working in a team of two.
+	This also applies if any member of a team of two
+	has a registered University Academic Adjustment Plan (UAAP).
+    </p>
+    </li>
+
+<li> Your submission will be examined, compiled, and run on
+    a contemporary <b>Ubuntu Linux</b> system (such as in CSSE labs).
+
+    While you may develop your project on other computers, excuses such as
+    <i>"it worked at laptop, just not when you tested it!"</i>&nbsp;&nbsp;will
+    not be accepted.
+    </p>
+    </li>
+
+<li> This project is subject to UWA's 
+<a href="http://www.governance.uwa.edu.au/procedures/policies/policies-and-procedures?method=document&id=UP07%2F23">
+Policy on Assessment</a> - particularly &sect;5.3
+<i>Principles of submission and penalty for late submission</i>,
+and
+<a href="http://www.student.uwa.edu.au/learning/resources/ace/conduct">
+Policy on Academic Conduct</a>.
+
+In accordance with these policies, you may <i>discuss</i> with other students
+the general principles required to understand this project,
+but the work you submit <b>must</b> be the result of your own team's efforts.
+
+All projects will be compared using software that detects significant
+similarities between source code files.
+Students suspected of plagiarism will be interviewed and will be required to
+demonstrate their full understanding of their project submission.
+	<p>
+	</li>
+
+<li> 25 of the possible 50 marks will come from assessing your design and programming style,
+including your use of meaningful comments;
+well chosen identifier names;
+appropriate choice of basic data-structures, data-types and functions;
+and
+appropriate choice of control-flow constructs (<b>manual marking</b>).
+	<p>
+	</li>
+
+<li> 25 of the possible 50 marks will come from the correctness of your solution
+(<b>automated marking</b>),
+which will assessed by having the correct output (measurements line)
+when tested with a number of <i>sysconfig</i> and <i>command</i> input files..
+	</li>
+</ul>
+</p>
+
+<p>
+During the marking, attention will
+obviously be given to the correctness of your solution. However, a correct
+and efficient solution should not be considered as the perfect, nor
+necessarily desirable, form of solution. Preference will be given to well
+presented, well documented solutions that use the appropriate features of
+the language to complete tasks in an easy to understand and easy to follow
+manner. That is, do not expect to receive full marks for your project simply
+because it works correctly. Remember, a computer program should not only
+convey a message to the computer, but also to other human programmers.
+</p>
+
+<p>
+<hr style="text-align: center; width: 85%;">
+
+<p>
+<br>
+Good luck!
+<br>
+<br>
+Chris McDonald.
+<br>
+August 2023.
+</p>
+
+<br>
+
+
+</td>
+</tr>
+</table>
+</div>
+
+<div id='footercontainer'>
+    <div class='internal'>
+
+<table style="color: #666666; margin: 0.5em 0 0 0.0em; line-height: 120%;"><tr>
+
+<td style='vertical-align: top; border-right: 2px solid #aaaaaa; padding-right: 1em;'>
+    <a href="https://www.uwa.edu.au">The University of Western Australia</a><br>
+    <br>
+    <a href="https://www.uwa.edu.au/schools/Physics-Mathematics-Computing/Department-of-Computer-Science-and-Software-Engineering">Computer Science and Software Engineering</a><br>
+    <br>
+    CRICOS Code: 00126G
+</td>
+
+<td style='vertical-align: top;'><a href="https://www.uwa.edu.au/schools/Physics-Mathematics-Computing/Department-of-Computer-Science-and-Software-Engineering"><img src='images/csseduck.png'></a></td>
+
+<td style='vertical-align: top;'>
+    Presented by <a href="/cdn-cgi/l/email-protection#5e1d362c372d70133d1a31303f323a1e2b293f703b3a2b703f2b612d2b3c343b3d2a632c3b647e1d170a0d6d6e6e6c7e1d31332e2b2a3b2c7e103b2a29312c352d"><span class="__cf_email__" data-cfemail="02416a706b712c4f61466d6c636e66427775632c6766772c6377">[email&#160;protected]</span></a><br>
+
+</td>
+</tr></table>
+
+    </div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
